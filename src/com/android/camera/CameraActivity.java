@@ -254,7 +254,7 @@ public class CameraActivity extends Activity
     private SettingsManager mSettingsManager;
 
     private final int DEFAULT_SYSTEM_UI_VISIBILITY = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                                                   | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
+                                                   | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
 
     private boolean mPendingDeletion = false;
 
