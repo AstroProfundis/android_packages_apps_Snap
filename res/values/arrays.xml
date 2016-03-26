@@ -24,11 +24,12 @@
         <item>@string/pref_video_quality_entry_2k</item>
         <item>@string/pref_video_quality_entry_1080p</item>
         <item>@string/pref_video_quality_entry_720p</item>
-        <item>@string/pref_video_quality_entry_480p</item>
-        <item>@string/pref_video_quality_entry_vga</item>
-        <item>@string/pref_video_quality_entry_cif</item>
-        <item>@string/pref_video_quality_entry_qvga</item>
-   </string-array>
+        <!--item>@string/pref_video_quality_entry_480p</item-->
+        <!--item>@string/pref_video_quality_entry_vga</item-->
+        <!--item>@string/pref_video_quality_entry_cif</item-->
+        <!--item>@string/pref_video_quality_entry_qvga</item-->
+    </string-array>
+
     <string-array name="pref_video_quality_entryvalues" translatable="false">
         <item>4096x2160</item>
         <item>3840x2160</item>
@@ -36,10 +37,10 @@
         <item>2048x1080</item>
         <item>1920x1080</item>
         <item>1280x720</item>
-        <item>720x480</item>
-        <item>640x480</item>
-        <item>352x288</item>
-        <item>320x240</item>
+        <!--item>720x480</item-->
+        <!--item>640x480</item-->
+        <!--item>352x288</item-->
+        <!--item>320x240</item-->
     </string-array>
 
     <!-- Camera Preference save path entries -->
