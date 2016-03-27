@@ -4173,7 +4173,6 @@ public class PhotoModule extends BaseModule<PhotoUI> implements
                 doModeSwitch = updateCameraParametersPreference();
             }
 
-            CameraUtil.dumpParameters(mParameters);
             mCameraDevice.setParameters(mParameters);
             mFocusManager.setParameters(mParameters);
 

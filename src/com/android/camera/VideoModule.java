@@ -2843,7 +2843,6 @@ public class VideoModule extends BaseModule<VideoUI> implements
                 updateCameraParametersPreference();
             }
 
-            CameraUtil.dumpParameters(mParameters);
             mCameraDevice.setParameters(mParameters);
             mFocusManager.setParameters(mParameters);
         }
