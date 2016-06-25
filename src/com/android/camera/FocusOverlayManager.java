@@ -139,11 +139,18 @@ public class FocusOverlayManager {
         setFocusRing(focusRing);
     }
 
+    private void setFocusRingDim(FocusRing focusRing) {
+        if (focusRing == null || mDispSize == null) {
+            return;
+        }
+        RectF focusDim =
+            new RectF(0, mTopMargin, mDispSize.x, mDispSize.y - mBottomMargin);
+        focusRing.configurePreviewDimensions(focusDim);
+    }
+
     public void setFocusRing(FocusRing focusRing) {
         mFocusRing = focusRing;
-        if (focusRing != null) {
-            focusRing.configurePreviewDimensions(CameraUtil.rectToRectF(mPreviewRect));
-        }
+        setFocusRingDim(focusRing);
     }
 
     public void setParameters(Parameters parameters) {
@@ -382,7 +389,7 @@ public class FocusOverlayManager {
                     mState == STATE_SUCCESS || mState == STATE_FAIL)) {
             cancelAutoFocus();
         }
-        if (mPreviewRect.isEmpty() || !mPreviewRect.contains(x, y)) return;
+        if (mPreviewRect.isEmpty() return;
         // Initialize variables.
         // Initialize mFocusArea.
         if (mFocusAreaSupported) {
