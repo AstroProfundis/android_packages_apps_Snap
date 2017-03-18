@@ -100,6 +100,8 @@ public class FocusOverlayManager {
 
     private int mFocusTime; // time after touch-to-focus
 
+    private boolean mDoRefocusOnCapture = false;
+
     public interface Listener {
         public void autoFocus();
         public void cancelAutoFocus();
@@ -250,7 +252,9 @@ public class FocusOverlayManager {
     }
 
     private boolean doSnapAf() {
-        if (mHandler.hasMessages(RESET_TOUCH_FOCUS) || !mFocusAreaSupported) {
+        if (mHandler.hasMessages(RESET_TOUCH_FOCUS) ||
+                !mFocusAreaSupported ||
+                !mDoRefocusOnCapture) {
             return false;
         }
 
@@ -628,6 +632,10 @@ public class FocusOverlayManager {
 
     public boolean isTouch() {
         return mTouchAFRunning;
+    }
+
+    public void setRefocusOnCapture(boolean enable) {
+        mDoRefocusOnCapture = enable;
     }
 
     private static class FocusInfo {

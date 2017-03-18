@@ -132,6 +132,7 @@ public class CameraSettings {
     public static final String KEY_FACE_RECOGNITION = "pref_camera_facerc_key";
     public static final String KEY_DIS = "pref_camera_dis_key";
     public static final String KEY_ANTISHAKE = "pref_camera_antishake_key";
+    public static final String KEY_REFOCUS = "pref_camera_refocus_key";
 
     public static final String KEY_LONGSHOT = "pref_camera_longshot_key";
     public static final String KEY_INSTANT_CAPTURE = "pref_camera_instant_capture_key";
@@ -787,6 +788,8 @@ public class CameraSettings {
         ListPreference manualExposure = group.findPreference(KEY_MANUAL_EXPOSURE);
         ListPreference manualWB = group.findPreference(KEY_MANUAL_WB);
         ListPreference instantCapture = group.findPreference(KEY_INSTANT_CAPTURE);
+        ListPreference antishake = group.findPreference(KEY_ANTISHAKE);
+        ListPreference refocus = group.findPreference(KEY_REFOCUS);
 
         if (instantCapture != null) {
             if (!isInstantCaptureSupported(mParameters)) {
@@ -970,6 +973,12 @@ public class CameraSettings {
             String str =
                 "0,0.200,0.400,0.667,1.000,2.000,4.000,8.000,16.667,33.333,66.667,125.000,250.000,422.240";
             filterUnsupportedOptions(group, shutterSpeed, split(str));
+        }
+
+        if (mCameraId == 1) {
+            if (refocus != null) {
+                removePreference(group, refocus.getKey());
+            }
         }
     }
 
